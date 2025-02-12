@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Niubiz Pay</title>
+  </head>
+  <body>
+    <script
+      type="text/javascript"
+      src="https://static-content-qas.vnforapps.com/env/sandbox/js/checkout.js"
+    ></script>
+
+    <script type="text/javascript">
+      openForm();
+
+      function openForm() {
+        VisanetCheckout.configure({
+          sessiontoken:
+            "26e1df40952ad920bfddb21fe63cfd801b7fab562af29eaed1b1da670af581c3",
+          channel: "web",
+          merchantid: "456879852",
+          purchasenumber: 2020100901,
+          amount: 1,
+          expirationminutes: "20",
+          timeouturl: "about:blank",
+          merchantlogo: "",
+          formbuttoncolor: "#000000",
+          usertoken:"djzm80@gmail.com",
+          merchantname: "Belicorp SAC",
+          action: "",
+          complete: function (params) {
+            console.log(params);
+          },
+        });
+        VisanetCheckout.open();
+      }
+    </script>
+  </body>
+</html>
