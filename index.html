@@ -12,29 +12,35 @@
     ></script>
 
     <script type="text/javascript">
-      openForm();
+      //openForm();
 
       function openForm() {
         VisanetCheckout.configure({
           sessiontoken:
-            "26e1df40952ad920bfddb21fe63cfd801b7fab562af29eaed1b1da670af581c3",
+            "f16d9e34c0e32de4572fe59c5e000a7b7001308d131539a0261f61cb5a13f9b0",
           channel: "web",
           merchantid: "456879852",
           purchasenumber: 2020100901,
-          amount: 1,
+          amount: 10.0,
           expirationminutes: "20",
           timeouturl: "about:blank",
           merchantlogo: "",
           formbuttoncolor: "#000000",
-          usertoken:"djzm80@gmail.com",
+          usertoken: "djzm80@gmail.com",
           merchantname: "Belicorp SAC",
-          action: "",
+          action: "end.html",
           complete: function (params) {
-            console.log(params);
+            alert(JSON.stringify(params));
+            //localStorage.setItem("transactionData", JSON.stringify(params));
           },
         });
         VisanetCheckout.open();
       }
     </script>
+
+    <div>
+      <button onclick="openForm();">Pay Niubiz</button>
+    </div>
+
   </body>
 </html>
